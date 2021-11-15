@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblySearchPaths>$(MSBuildSDKsPath)\..\FSharp;$(AssemblySearchPaths);</AssemblySearchPaths>
+
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="fsharp.compiler.service" Version="41.0.1"/>
+    <Content Include="FSharp.psd1" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- These are provided by Powershell 7 and dont need to be included in the package -->
+    <PackageReference Include="System.Management.Automation" Version="7.0.0-preview.1" PrivateAssets="All"/>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.Resources.Extensions" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.Security.Permissions" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.Windows.Extensions" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="6.0.0" ExcludeAssets="all"/>
+    <PackageReference Include="System.CodeDom" Version="6.0.0" ExcludeAssets="all"/>
+  </ItemGroup>
+</Project>
