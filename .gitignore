@@ -1,5 +1,5 @@
-src/bin
-src/obj
-out
+**/bin
+**/obj
+**/out
 .fake
 .ionide

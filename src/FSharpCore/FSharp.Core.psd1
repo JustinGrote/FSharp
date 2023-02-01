@@ -9,10 +9,10 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule           = 'PoshFSharp.dll'
+    RootModule           = 'FSharp.Core.dll'
 
     # Version number of this module.
-    ModuleVersion        = '0.0.1'
+    ModuleVersion        = '7.2.0'
 
     # Supported PSEditions
     CompatiblePSEditions = 'Core'
@@ -30,10 +30,10 @@
     Copyright            = '2021 Justin Grote @justinwgrote'
 
     # Description of the functionality provided by this module
-    Description          = 'A F# Dynamic Compiler in the style of the Add-Type PowerShell command'
+    Description          = 'Provides FSharp.Core libraries for F# PowerShell Modules'
 
     # Minimum version of the PowerShell engine required by this module
-    PowerShellVersion    = '7.1'
+    PowerShellVersion    = '7.2'
 
     # Name of the PowerShell host required by this module
     # PowerShellHostName = ''
@@ -104,7 +104,7 @@
             ProjectUri = 'https://github.com/justingrote/PoshFSharp'
 
             # A URL to an icon representing this module.
-            # IconUri = ''
+            IconUri = 'https://raw.githubusercontent.com/JustinGrote/FSharp/main/images/logo.png'
 
             # ReleaseNotes of this module
             # ReleaseNotes = ''

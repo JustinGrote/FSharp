@@ -1,6 +1,5 @@
 {
 	"recommendations": [
-		"ionide.ionide-fsharp",
-		"ionide.ionide-paket"
+		"ionide.ionide-fsharp"
 	]
 }
