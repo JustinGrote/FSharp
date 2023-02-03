@@ -72,7 +72,7 @@
     FunctionsToExport    = '*'
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport      = 'Add-Type'
+    CmdletsToExport      = 'Add-FSharpType'
 
     # Variables to export from this module
     VariablesToExport    = '*'
@@ -126,7 +126,7 @@
     # HelpInfoURI = ''
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
-    DefaultCommandPrefix = 'FSharp'
+    # DefaultCommandPrefix = 'FSharp'
 
 }
 
