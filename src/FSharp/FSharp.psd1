@@ -12,13 +12,13 @@
     RootModule           = 'FSharp.dll'
 
     # Version number of this module.
-    ModuleVersion        = '0.0.1'
+    ModuleVersion        = '8.0.0'
 
     # Supported PSEditions
     CompatiblePSEditions = 'Core'
 
     # ID used to uniquely identify this module
-    GUID                 = '46f9db37-c23c-45b5-a4b0-2f4a40cd53c5'
+    GUID                 = '0d394a13-1e05-4db9-88ac-2bee72446d0b'
 
     # Author of this module
     Author               = 'Justin Grote @justinwgrote'
@@ -33,7 +33,7 @@
     Description          = 'A F# Dynamic Compiler in the style of the Add-Type PowerShell command'
 
     # Minimum version of the PowerShell engine required by this module
-    PowerShellVersion    = '7.2'
+    PowerShellVersion    = '7.4'
 
     # Name of the PowerShell host required by this module
     # PowerShellHostName = ''
@@ -51,7 +51,7 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules = @('FSharp.Core')
+    # RequiredModules = @('FSharp.Core')
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()

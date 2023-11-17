@@ -3,9 +3,10 @@
 module AddFSharpType =
   open FSharp.Compiler.CodeAnalysis
   open System
-  open type System.IO.Path
-  open type System.IO.File
-  open type System.Reflection.Assembly
+  open System.IO
+  open type Path
+  open type File
+  open System.Reflection
 
   /// This is basically the compiler so we name it that way
   let compiler = FSharpChecker.Create()
@@ -17,7 +18,12 @@ module AddFSharpType =
     tempFilePath.ToString()
 
   let AddFromFile (sourceFile : string) =
+    let currentDirectory = Directory.GetCurrentDirectory()
     let destination = GetTempFilePathWithExtension ".dll"
+    let thisAssembly = Assembly.GetExecutingAssembly()
+    let thisDirectory = GetDirectoryName(thisAssembly.Location)
+    Directory.SetCurrentDirectory(thisDirectory)
+
     let errors, exitCode =
       compiler.Compile([|
         "fsc.dll"
@@ -26,9 +32,12 @@ module AddFSharpType =
         "-o"; destination
       |])
       |> Async.RunSynchronously
+
+    Directory.SetCurrentDirectory(currentDirectory)
+
     // TODO: Better error handling
     if exitCode > 0 then raise (InvalidOperationException(errors.[0].ToString()))
-    let assembly = LoadFrom(destination)
+    let assembly = Assembly.LoadFrom(destination)
     assembly
 
   let AddType (typeDefinition : string) =

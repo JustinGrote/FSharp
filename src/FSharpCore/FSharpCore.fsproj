@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+
     <!-- We actually want to include FSharp.Core here -->
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
     <OutputType>Library</OutputType>
-    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblySearchPaths>$(MSBuildSDKsPath)\..\FSharp;$(AssemblySearchPaths);</AssemblySearchPaths>
+
   </PropertyGroup>
+
+  <PropertyGroup Label="BuildOptions">
+    <DebugType>portable</DebugType>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <PublishDir>$(SolutionDir)/Release/FSharp.Core</PublishDir>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+
 	<ItemGroup>
-    <PackageReference Include="FSharp.Core" Version="7.0.0" />
+    <PackageReference Include="FSharp.Core" Version="8.0.100" />
     <Content Include="FSharp.Core.psd1" CopyToPublishDirectory="Always" />
 	</ItemGroup>
-  <ItemGroup>
-    <!-- These are provided by Powershell 7 and dont need to be included in the package -->
-    <PackageReference Include="System.Management.Automation" Version="7.2.0" ExcludeAssets="all" />
-  </ItemGroup>
 </Project>

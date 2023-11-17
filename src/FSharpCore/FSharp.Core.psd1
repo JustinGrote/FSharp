@@ -12,7 +12,7 @@
     RootModule           = 'FSharp.Core.dll'
 
     # Version number of this module.
-    ModuleVersion        = '7.2.0'
+    ModuleVersion        = '8.0.100'
 
     # Supported PSEditions
     CompatiblePSEditions = 'Core'
@@ -27,7 +27,7 @@
     CompanyName          = 'Unspecified'
 
     # Copyright statement for this module
-    Copyright            = '2021 Justin Grote @justinwgrote'
+    Copyright            = '2023 Justin Grote @justinwgrote'
 
     # Description of the functionality provided by this module
     Description          = 'Provides FSharp.Core libraries for F# PowerShell Modules'
@@ -68,18 +68,6 @@
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
     # NestedModules = @()
 
-    # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport    = '*'
-
-    # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport      = 'Add-Type'
-
-    # Variables to export from this module
-    VariablesToExport    = '*'
-
-    # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-    AliasesToExport      = '*'
-
     # DSC resources to export from this module
     # DscResourcesToExport = @()
 
@@ -101,7 +89,7 @@
             LicenseUri = 'https://opensource.org/licenses/MIT'
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/justingrote/PoshFSharp'
+            ProjectUri = 'https://github.com/JustinGrote/FSharp'
 
             # A URL to an icon representing this module.
             IconUri = 'https://raw.githubusercontent.com/JustinGrote/FSharp/main/images/logo.png'
@@ -126,7 +114,5 @@
     # HelpInfoURI = ''
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
-    DefaultCommandPrefix = 'FSharp'
-
 }
 

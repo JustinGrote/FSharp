@@ -1,18 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <!-- We want to selectively exclude FSharp.Core below, so we need to disable the implicit reference -->
-    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
-    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup Label="BuildOptions">
+    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+    <DebugType>portable</DebugType>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <PublishDir>$(SolutionDir)/Release/FSharp</PublishDir>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+
   <ItemGroup>
-    <!-- We ship FSharp.Core as part of common module fsharpcore, reference in the .psd1-->
-    <PackageReference Include="fsharp.core" Version="7.0.0" ExcludeAssets="All" />
-    <PackageReference Include="fsharp.compiler.service" Version="42.7.101"/>
-    <PackageReference Include="System.Runtime.Remoting" Version="7.0.0"/>
+    <PackageReference Include="fsharp.compiler.service" Version="43.8.100" />
+    <!-- We ship FSharp.Core as part of common module FSharp.Core, which will be imported as a module dependency -->
+    <PackageReference Include="fsharp.core" Version="8.0.100" />
+
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library.fs" />
@@ -20,17 +27,9 @@
   </ItemGroup>
   <ItemGroup>
     <!-- These are provided by Powershell 7 and dont need to be included in the package -->
-    <PackageReference Include="System.Management.Automation" Version="7.3.0" PrivateAssets="All" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Drawing.Common" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Resources.Extensions" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Security.Permissions" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Windows.Extensions" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.Diagnostics.EventLog" Version="7.0.0" ExcludeAssets="all" />
-    <PackageReference Include="System.CodeDom" Version="7.0.0" ExcludeAssets="all" />
+    <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="All" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="System.Reflection.Metadata" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
